@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Gamble against the casino of Vancouver.</p>
+
+<button onclick="gambling()">Gamble!</button>
+
+<!-- <form>
+Wager:<br>
+<input id="wager" type="text" name="">
+<br>
+Guess:<br>
+<input id="guess" type="text" name="">
+</form> -->
+
+<script>
+var bankroll = 100
+
+function gambling(){
+  var bet = prompt("What is your bet size?");
+  var guess = prompt("What is your guess?");
+
+  var casino = Math.floor((Math.random() * 10) + 1);
+
+  if (guess == casino + 1 || guess == casino - 1) {
+    console.log("You've tied")
+  }
+  else if (guess == casino) {
+    console.log("You are a winner!")
+    bankroll = bankroll + (bet * 2)
+  }
+  else {
+    console.log("Sorry you lose")
+    bankroll = bankroll - bet
+  }
+  console.log(guess)
+  console.log(casino)
+  console.log(bankroll)
+}
+
+// console.log(gambling(guess))
+
+</script>
+
+</body>
+</html>
